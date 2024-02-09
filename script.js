@@ -19,7 +19,7 @@ let gameboard = (function () {
         gameboardArray[index] = sign;
         render()
     }
-    let getArray = function() {
+    let getArray = function () {
         return gameboardArray
     }
     return {render, arrayUpdate, getArray}
@@ -60,6 +60,11 @@ let game = (function () {
                 currentArray[2] === currentArray[4] && currentArray[4] === currentArray[6] && currentArray[2] !== "") {
                 gameOn = false
                 console.log("Game Over " + currentPlayer.name + " Won!")
+            } else if (currentArray[0] && currentArray[1] && currentArray[2] &&
+                       currentArray[3] && currentArray[4] && currentArray[5] &&
+                       currentArray[6] && currentArray[7] && currentArray[8] !== "") {
+                gameOn = false
+                console.log("Game Over! It's a Draw!");
             }
             playerSwitch()
         }
